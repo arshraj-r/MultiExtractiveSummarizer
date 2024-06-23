@@ -1,0 +1,2 @@
+[console_scripts]
+ExtractiveSummarizer = ExtractiveSummarizer.summarizer:ExtractiveSummarizer

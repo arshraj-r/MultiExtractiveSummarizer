@@ -1,0 +1,9 @@
+numpy
+scipy
+scikit-learn
+networkx
+nltk
+sumy
+torch
+transformers
+sentence-transformers

@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: MultiExtractiveSummarizer
+Version: 0.1.0
+Summary: Python package for extractive text summarization using various embeddings and methods.
+Home-page: https://github.com/arshraj-r/MultiExtractiveSummarizer.git
+Author: Arshraj Randhawa
+Author-email: arshraj.randhawa@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sentence-transformers
+Requires-Dist: torch
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: gensim
+Requires-Dist: sumy
+
+# MultiExtractiveSummarizer
+
+MultiExtractiveSummarizer is a Python package for extractive text summarization using various embeddings and summarization methods. It provides flexibility to choose different word embeddings (e.g., TF-IDF, Doc2Vec, GloVe, Sentence-BERT) and summarization algorithms (e.g., TextRank, LexRank, LSA, K-Means clustering) to generate concise summaries from text documents.
+
+## Features
+
+- Support for multiple word embeddings including TF-IDF, Doc2Vec, GloVe, and Sentence-BERT.
+- Implementations of various extractive summarization algorithms such as TextRank, LexRank, LSA, and K-Means clustering.
+- Easy-to-use API for integrating summarization capabilities into your Python applications.
+- Customizable summarization parameters like number of sentences, ratio of summary length, and clustering parameters.
+
+## Installation
+
+You can install MultiExtractiveSummarizer from PyPI using pip:
+
+```bash
+pip install MultiExtractiveSummarizer
