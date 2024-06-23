@@ -1,21 +1,24 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='text_summarizer',
+    name='MultiExtractiveSummarizer',
     version='0.1.0',
     packages=find_packages(),
     install_requires=[
         'sentence-transformers',
         'torch',
-        'numpy'
+        'numpy',
+        'scikit-learn',
+        'gensim',
+        'sumy'
     ],
     entry_points={
         'console_scripts': [
-            'summarize=text_summarizer.summarizer:ExtractiveSummarizer',
+            'ExtractiveSummarizer=ExtractiveSummarizer.summarizer:ExtractiveSummarizer',
         ],
     },
-    author='Your Name',
-    author_email='your_email@example.com',
+    author='Arshraj Randhawa',
+    author_email='arshraj.randhawa@gmail.com',
     description='An extractive text summarizer using Sentence-BERT',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
