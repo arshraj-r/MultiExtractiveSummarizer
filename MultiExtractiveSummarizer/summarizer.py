@@ -3,17 +3,17 @@
 from .embeddings import Embeddings
 from .methods.kmeans import KMeansSummarizer
 from .methods.textrank import TextRankSummarizer
-from .methods.sumy import SumySummarizer
+# from .methods.sumy import SumySummarizer
 from .methods.lexrank import LexRankSummarizer
-from .methods.lsa import LSASummarizer
-from .methods.luhn import LuhnSummarizer
-from .methods.edmundson import EdmundsonSummarizer
-from .methods.textteaser import TextTeaserSummarizer
-from .methods.sumbasic import SumBasicSummarizer
-from .methods.klsum import KLSumSummarizer
-from .methods.submodular import SubmodularSummarizer
+# from .methods.lsa import LSASummarizer
+# from .methods.luhn import LuhnSummarizer
+# from .methods.edmundson import EdmundsonSummarizer
+# from .methods.textteaser import TextTeaserSummarizer
+# from .methods.sumbasic import SumBasicSummarizer
+# from .methods.klsum import KLSumSummarizer
+# from .methods.submodular import SubmodularSummarizer
 
-class ExtractiveSummarizer:
+class MultiExtractiveSummarizer:
     def __init__(self, embedding_method='sbert', summarization_method='kmeans'):
         self.embedding_method = embedding_method
         self.summarization_method = summarization_method

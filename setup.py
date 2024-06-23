@@ -7,7 +7,7 @@ setup(
     install_requires=[
         'sentence-transformers',
         'torch',
-        'numpy',
+        'numpy>=1.14,<2',
         'scikit-learn',
         'gensim',
         'sumy'
