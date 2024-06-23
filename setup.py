@@ -19,7 +19,7 @@ setup(
     },
     author='Arshraj Randhawa',
     author_email='arshraj.randhawa@gmail.com',
-    description='An extractive text summarizer using Sentence-BERT',
+    description='Python package for extractive text summarization using various embeddings and methods.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/arshraj-r/MultiExtractiveSummarizer.git',
