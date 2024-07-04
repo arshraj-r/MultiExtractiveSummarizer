@@ -5,18 +5,11 @@ setup(
     version='0.1.0',
     packages=find_packages(),
     install_requires=[
-        'sentence-transformers',
-        'torch',
-        'numpy>=1.14,<2',
-        'scikit-learn',
-        'gensim',
-        'sumy'
+        "nltk",
+        "numpy",
+        "sentence-transformers",
+        "lexrank"
     ],
-    entry_points={
-        'console_scripts': [
-            'ExtractiveSummarizer=ExtractiveSummarizer.summarizer:ExtractiveSummarizer',
-        ],
-    },
     author='Arshraj Randhawa',
     author_email='arshraj.randhawa@gmail.com',
     description='Python package for extractive text summarization using various embeddings and methods.',
