@@ -6,9 +6,10 @@ setup(
     packages=find_packages(),
     install_requires=[
         "nltk",
-        "numpy",
         "sentence-transformers",
-        "lexrank"
+        "scipy",
+        "scikit-learn"
+        
     ],
     author='Arshraj Randhawa',
     author_email='arshraj.randhawa@gmail.com',
