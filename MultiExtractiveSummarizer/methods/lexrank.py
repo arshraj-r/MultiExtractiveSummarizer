@@ -93,11 +93,14 @@ class LexRankSummarizer:
         return distribution
 
 
-    def summarize(self,sentences, embeddings):
+    def summarize(self,sentences, embeddings, **kwargs):
         similarity_scores = cosine_similarity(embeddings)
         centrality_scores = self.degree_centrality_scores(similarity_scores)
         most_central_sentence_indices = np.argsort(-centrality_scores)
         most_central_sentence_indices_sorted=sorted(most_central_sentence_indices)
-        summary_indicies=most_central_sentence_indices_sorted[0:2] #adjust the length here
+        if "num_sentences" in kwargs:
+            summary_indicies=most_central_sentence_indices_sorted[0:kwargs['num_sentences']]
+        else:
+            summary_indicies=most_central_sentence_indices_sorted[0:int(len(sentences)/2)] #adjust the length here
         summary_sentences=[sentences[idx].strip() for idx in summary_indicies]
         return " ".join(summary_sentences)

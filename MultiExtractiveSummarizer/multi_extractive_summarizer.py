@@ -1,10 +1,6 @@
-# quicksumm/summarizer.py
-
-from embeddings import Embeddings
-from methods.lexrank import LexRankSummarizer
+from .embeddings import Embeddings
+from .methods.lexrank import LexRankSummarizer
 import nltk
-
-
 
 class MultiExtractiveSummarizer:
     def __init__(self, embedding_method, summarization_method):
