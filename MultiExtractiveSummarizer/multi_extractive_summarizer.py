@@ -1,5 +1,6 @@
 from .embeddings import Embeddings
 from .methods.lexrank import LexRankSummarizer
+from .methods.kmeans import KMeansSummarizer
 import nltk
 
 class MultiExtractiveSummarizer:
@@ -10,6 +11,7 @@ class MultiExtractiveSummarizer:
         
         summarization_methods = {
             'lexrank': LexRankSummarizer,
+            'kmeans': KMeansSummarizer
         }
         
         if summarization_method in summarization_methods:
