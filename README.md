@@ -4,9 +4,8 @@ MultiExtractiveSummarizer is a Python package for extractive text summarization 
 
 ## Features
 
-- Support for multiple word embeddings including TF-IDF, Doc2Vec, GloVe, and Sentence-BERT.
+- Support for multiple word embeddings from sentence-bert.
 - Implementations of various extractive summarization algorithms such as TextRank, LexRank, LSA, and K-Means clustering.
-- Easy-to-use API for integrating summarization capabilities into your Python applications.
 - Customizable summarization parameters like number of sentences, ratio of summary length, and clustering parameters.
 
 ## Installation
@@ -14,4 +13,20 @@ MultiExtractiveSummarizer is a Python package for extractive text summarization 
 You can install MultiExtractiveSummarizer from PyPI using pip:
 
 ```bash
-pip install MultiExtractiveSummarizer
+pip install MultiExtractiveSummarizer==0.2.0
+```
+
+## Usage
+
+```python 
+from MultiExtractiveSummarizer import MESummarizer
+
+text="your imput text"
+summarizer = MultiExtractiveSummarizer(embedding_method='sbert', summarization_method='lexrank')
+summary = summarizer.summarize(text, ratio=.5)
+print(summary)
+
+text="your input text"
+summarizer = MultiExtractiveSummarizer(embedding_method='sbert', summarization_method='lexrank')
+summary = summarizer.summarize(text, num_sentences=.5)
+```
