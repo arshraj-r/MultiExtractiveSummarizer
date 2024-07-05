@@ -22,11 +22,11 @@ pip install MultiExtractiveSummarizer==0.2.0
 from MultiExtractiveSummarizer import MESummarizer
 
 text="your imput text"
-summarizer = MultiExtractiveSummarizer(embedding_method='sbert', summarization_method='lexrank')
+summarizer = MESummarizer(embedding_method='sbert', summarization_method='lexrank')
 summary = summarizer.summarize(text, ratio=.5)
 print(summary)
 
 text="your input text"
-summarizer = MultiExtractiveSummarizer(embedding_method='sbert', summarization_method='lexrank')
+summarizer = MESummarizer(embedding_method='sbert', summarization_method='lexrank')
 summary = summarizer.summarize(text, num_sentences=.5)
 ```
