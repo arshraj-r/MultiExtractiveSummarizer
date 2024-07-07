@@ -51,10 +51,10 @@ Extractive summarization involves selecting sentences from a document to create 
 Here's an example of how to use the `MultiExtractiveSummarizer` package to create a summary of a text document.
 
 ```python
-from MultiExtractiveSummarizer import MESummarizer
+from MultiExtractiveSummarizer import MultiExtractiveSummarizer
 
 # Initialize the summarizer
-summarizer = MESummarizer(embedding_method='sbert', ranking_method='lexrank')
+summarizer = MultiExtractiveSummarizer(embedding_method='sbert', ranking_method='lexrank')
 
 # Example text document
 text = """

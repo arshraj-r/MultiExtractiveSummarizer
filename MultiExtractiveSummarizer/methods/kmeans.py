@@ -41,5 +41,5 @@ class KMeansSummarizer:
             closest_sentence_index = cluster_indices[np.argmin(np.linalg.norm(embeddings[cluster_indices] - centroid, axis=1))]
             closest_sentences.append(sentences[closest_sentence_index])
 
-        summary = '. '.join(closest_sentences)
+        summary = ' '.join(closest_sentences)
         return summary
