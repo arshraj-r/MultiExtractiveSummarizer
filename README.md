@@ -81,7 +81,7 @@ For advanced usage, you can specify different parameters for embedding methods a
 from MultiExtractiveSummarizer import MultiExtractiveSummarizer
 
 # Initialize the summarizer with TF-IDF and K-means
-summarizer = MultiExtractiveSummarizer(embedding_method='tfidf', summarization_method='kmeans', num_clusters=5)
+summarizer = MultiExtractiveSummarizer(embedding_method='tfidf', summarization_method='kmeans')
 
 # Example text document
 text = """
