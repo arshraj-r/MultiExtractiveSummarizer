@@ -54,7 +54,7 @@ Here's an example of how to use the `MultiExtractiveSummarizer` package to creat
 from MultiExtractiveSummarizer import MultiExtractiveSummarizer
 
 # Initialize the summarizer
-summarizer = MultiExtractiveSummarizer(embedding_method='sbert', ranking_method='lexrank')
+summarizer = MultiExtractiveSummarizer(embedding_method='sbert', summarization_method='lexrank')
 
 # Example text document
 text = """
@@ -81,7 +81,7 @@ For advanced usage, you can specify different parameters for embedding methods a
 from MultiExtractiveSummarizer import MultiExtractiveSummarizer
 
 # Initialize the summarizer with TF-IDF and K-means
-summarizer = MultiExtractiveSummarizer(embedding_method='tfidf', ranking_method='kmeans', num_clusters=5)
+summarizer = MultiExtractiveSummarizer(embedding_method='tfidf', summarization_method='kmeans', num_clusters=5)
 
 # Example text document
 text = """
