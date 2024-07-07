@@ -19,7 +19,7 @@
 You can install MultiExtractiveSummarizer from PyPI using pip:
 
 ```bash
-pip install MultiExtractiveSummarizer==0.2.0
+pip install MultiExtractiveSummarizer
 ```
 
 ## Description
