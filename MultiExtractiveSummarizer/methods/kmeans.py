@@ -25,9 +25,14 @@ class KMeansSummarizer:
         return optimal_clusters
     
 
-    def summarize(self, sentences, embeddings,**kwargs):        
-        if 'num_sentences' in kwargs:
+    def summarize(self, sentences, embeddings,**kwargs):     
+        if "ratio" in kwargs:
+            self.num_centroids= max(1,int(len(sentences)*kwargs["ratio"]))   
+        elif 'num_sentences' in kwargs:
             self.num_centroids = kwargs['num_sentences']
+        else:
+            self.num_centroids=max(1,int(len(sentences)*0.5)) # adjusting default to 50% of total lenght
+
 
         kmeans = KMeans(n_clusters=self.num_centroids,random_state=34)
         kmeans.fit(embeddings)

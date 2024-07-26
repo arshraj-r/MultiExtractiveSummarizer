@@ -91,16 +91,21 @@ class LexRankSummarizer:
         distribution /= n_1
 
         return distribution
-
+    
+    def calculate_num_sentences(self, total_sentences,ratio=None):
+               return max(1, int(total_sentences * ratio))  # Ensure at least one sentence is included
+             
 
     def summarize(self,sentences, embeddings, **kwargs):
+        if "ratio" in kwargs:
+            self.num_sentences=self.calculate_num_sentences(total_sentences=len(embeddings),ratio=kwargs['ratio'])
+        elif "num_sentences" in kwargs:
+            self.num_sentences=kwargs["num_sentences"]
+
         similarity_scores = cosine_similarity(embeddings)
         centrality_scores = self.degree_centrality_scores(similarity_scores)
         most_central_sentence_indices = np.argsort(-centrality_scores)
         most_central_sentence_indices_sorted=sorted(most_central_sentence_indices)
-        if "num_sentences" in kwargs:
-            summary_indicies=most_central_sentence_indices_sorted[0:kwargs['num_sentences']]
-        else:
-            summary_indicies=most_central_sentence_indices_sorted[0:int(len(sentences)/2)] #adjust the length here
+        summary_indicies=most_central_sentence_indices_sorted[0:self.num_sentences]
         summary_sentences=[sentences[idx].strip() for idx in summary_indicies]
         return " ".join(summary_sentences)
