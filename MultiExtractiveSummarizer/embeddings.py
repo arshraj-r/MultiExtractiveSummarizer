@@ -11,8 +11,6 @@ class Embeddings:
         else:
             raise ValueError("Model not found")
         
-
-
     def fit_transform(self, texts):
         if self.method == 'sbert':
             return self.model.encode(texts)

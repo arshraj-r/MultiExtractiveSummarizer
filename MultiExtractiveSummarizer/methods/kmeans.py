@@ -34,12 +34,18 @@ class KMeansSummarizer:
         cluster_centers = kmeans.cluster_centers_
         cluster_labels = kmeans.labels_
 
-        closest_sentences = []
+        closest_sentences_indices  = []
         for i in range(self.num_centroids):
             cluster_indices = np.where(cluster_labels == i)[0]
             centroid = cluster_centers[i]
             closest_sentence_index = cluster_indices[np.argmin(np.linalg.norm(embeddings[cluster_indices] - centroid, axis=1))]
-            closest_sentences.append(sentences[closest_sentence_index])
+            # closest_sentences.append(sentences[closest_sentence_index])
+            closest_sentences_indices.append(closest_sentence_index)
+        
+        # Sort the indices to maintain the original order of sentences
+        closest_sentences_indices.sort()
+
+        closest_sentences = [sentences[idx] for idx in closest_sentences_indices]
 
         summary = ' '.join(closest_sentences)
         return summary
