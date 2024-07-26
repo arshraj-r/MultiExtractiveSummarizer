@@ -3,9 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class KMeansSummarizer2:
-    def __init__(self, elbow_method=None,num_sentences=2):
+    def __init__(self, elbow_method=None,ratio=None, num_sentences=None):
         self.elbow_method = elbow_method
-        self.num_sentences = num_sentences
+        self.ratio = ratio
+        self.num_sentences=num_sentences
 
     def elbow_method(self, embeddings):
         wcss = []
@@ -22,14 +23,20 @@ class KMeansSummarizer2:
 
         optimal_clusters = np.argmin(np.diff(np.diff(wcss))) + 2
         return optimal_clusters
+    
+    def calculate_num_sentences(self, total_sentences,ratio=None,num_sentences=None):
+        if ratio is not None:
+            return max(1, int(total_sentences * ratio))  # Ensure at least one sentence is included
+        return num_sentences if num_sentences is not None else max(1, int(total_sentences * 0.5))  # Default to ratio=50%  if not provided
 
-    def summarize(self, sentences, embeddings,**kwargs):
+    def summarize(self, sentences, embeddings,num_sentences=None, ratio=None):
 
-        if 'num_sentences' in kwargs:
-            self.num_sentences = kwargs['num_sentences']
+        self.num_sentences = self.calculate_num_sentences(len(sentences), ratio=ratio,num_sentences=num_sentences )
 
         # Determine the number of clusters based on the number of sentences
-        if len(sentences) < 10:
+        if len(sentences)<=3:
+            num_clusters=1
+        elif len(sentences)>3 and len(sentences) <= 10:
             num_clusters  = 2
         else:
             num_clusters  = 3
