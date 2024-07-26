@@ -38,11 +38,11 @@ Extractive summarization involves selecting sentences from a document to create 
 1. **LexRank**: LexRank is a graph-based algorithm for computing sentence importance based on eigenvector centrality in a similarity graph.
 2. **K-means Clustering**: K-means is a clustering algorithm that partitions sentences into k clusters, and representative sentences from each cluster are selected for the summary.
 3. **K-means Clustering-2** : KMeans clustering algorithm to identify key sentences in a document. The process involves the following steps:
-- Cluster Determination: Based on the number of sentences in the document, the number of clusters is set to 2 if there are fewer than 10 sentences, and 3 if there are 10 or more sentences.
-- Clustering: The KMeans algorithm is applied to the sentence embeddings, grouping the sentences into clusters based on their similarity.
-- Distance Calculation: For each sentence, the Euclidean distance to its respective cluster centroid is calculated.
-- Sentence Selection: The sentences are then ranked based on their proximity to the cluster centroids. The top num_sentences closest sentences are selected for the summary.
-- Original Order: The selected sentences are sorted to maintain their original order in the document, ensuring a coherent summary.
+  - Cluster Determination: Based on the number of sentences in the document, the number of clusters is set to 2 if there are fewer than 10 sentences, and 3 if there are 10 or more sentences.
+  - Clustering: The KMeans algorithm is applied to the sentence embeddings, grouping the sentences into clusters based on their similarity.
+  - Distance Calculation: For each sentence, the Euclidean distance to its respective cluster centroid is calculated.
+  - Sentence Selection: The sentences are then ranked based on their proximity to the cluster centroids. The top num_sentences closest sentences are selected for the summary.
+  - Original Order: The selected sentences are sorted to maintain their original order in the document, ensuring a coherent summary.
 
 ## Features
 
